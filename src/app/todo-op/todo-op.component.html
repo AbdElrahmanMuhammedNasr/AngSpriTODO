@@ -1,0 +1,13 @@
+<form (ngSubmit)="updateTodo()">
+    <div class="form-group">
+      <label for="description">description</label>
+      <input type="text" [(ngModel)]="todo.description" name="description" class="form-control" placeholder="Enter description" required>
+    </div>
+
+    <div class="form-group">
+      <label for="targetData">target  Data</label>
+      <input type="date" [ngModel]="todo.targetData | date:'yyyy-MM-dd' " (ngModelChange)="todo.targetData = $event" name="targetData" class="form-control"  required>
+    </div>
+
+    <button type="submit" class="btn btn-primary" > {{addOperation}}</button>
+</form>

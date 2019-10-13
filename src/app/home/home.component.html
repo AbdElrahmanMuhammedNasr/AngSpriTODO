@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <button class="alert alert-success" *ngIf="isDelete">{{message}}</button>
+    <div class="row"> 
+    
+        <div class="col-lg-3">
+            this div 
+            for users
+      
+          </div>
+      
+          <div class="col-lg-8">
+      
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">username</th>
+                  <th scope="col">description</th>
+                  <th scope="col">Done</th>
+                  <th scope="col">Data</th>
+                  <th>Delete</th>
+                  <th>Update</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let x  of todos">
+                  <th>{{x.id}} </th>
+                  <th>{{x.username}} </th>
+                  <td>{{ x.description }}</td>
+                  <td>{{ x.isDone }} </td>
+                  <td>{{ x.targetData | date | uppercase}}</td>
+                  <td><button class="btn btn-danger" (click)="onDeleteOne(x.id)" >Delete</button> </td>
+                  <td><button class="btn btn-warning" (click)="onUpdateOne(x.id)">Update</button> </td>
+      
+                </tr>
+                
+              </tbody>
+            </table>
+            <button type="button" class="btn btn-success" (click)="onAdd()">Add New One</button>
+      
+          </div> <!-- col8 -->
+    
+    </div><!-- row -->
+
+</div> <!-- container -->
